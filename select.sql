@@ -36,7 +36,8 @@ WHERE artist_name NOT LIKE '% %';
 -- 2.5
 SELECT track_name 
 FROM tracks
-WHERE track_name LIKE '%мой%' OR track_name LIKE '%my%';
+WHERE track_name ~* '(^|[\s.,;!?()"„“])мой([\s.,;!?()"„“]|$)'
+   OR track_name ~* '(^|[\s.,;!?()"„“])my([\s.,;!?()"„“]|$)';
 
 
 -- 3.1
